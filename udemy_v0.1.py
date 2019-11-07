@@ -30,11 +30,10 @@ if os.path.exists(filename):
 
 
 #Auhtentication details
-client_id  = 'eQmkqrkZtUxGpZrI3dn2q8SNpbQvj76kzRRfxfgo'
-client_secret = '48UB0nh4WxxxCVfVoYmEWqRIJHQI5x3V6H3wLEdlbbaOZHEwkmzTehcRfQBHTzSPwGc8UTJrWkNzhAPycpx7mLZT2RjuIjktWEu7TuJ91Y35pio2H0VCjbLsm1eIx8fO'
-
+client_id  = '' #your client id
+client_secret = '' #your client secret
 #get response from udemy
-response = requests.get('https://www.udemy.com/api-2.0/courses/625204', auth=HTTPBasicAuth(client_id, client_secret)).json()
+response = requests.get('https://www.udemy.com/api-2.0/courses/{course goes here}', auth=HTTPBasicAuth(client_id, client_secret)).json()
 
 response_str = json.dumps(response, indent=2)
 
@@ -65,14 +64,7 @@ if old_price - new_price == 0:
     print("done sleeping")
 
 if old_price - new_price > 0: 
-    new_price_state = "Prices have changed from {old_price} to {new_price}"
+    f"Prices have changed from {old_price} to {new_price}"
     
-    root = Tk()
-
-    status = Label(root, text=new_price_state)
-    exit()
-
-    root.mainloop()
-    exit()
 if old_price - new_price < 0:
     f"Cost Just went up"
